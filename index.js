@@ -4,3 +4,16 @@ const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#000000FF';
 
 ctx.fillRect(0, 0, 800, 600);
+
+const veh = {};
+
+{ // Generating the vehicles attributes.
+  veh.height = 100 + Math.floor(Math.random() * 51);
+  veh.length = 200 + Math.floor(Math.random() * 101);
+  veh.width = 100 + Math.floor(Math.random() * 51);
+}
+
+{ // Draw the body.
+  ctx.fillStyle = '#FFFFFFFF';
+  ctx.fillRect(400 - Math.floor(veh.length / 2), 300 - Math.floor(veh.height / 2), veh.length, veh.height);
+}
