@@ -14,6 +14,17 @@ const veh = {};
 }
 
 { // Draw the body.
+
+  // Draw the near side.
   ctx.fillStyle = '#FFFFFFFF';
   ctx.fillRect(400 - Math.floor(veh.length / 2), 300 - Math.floor(veh.height / 2), veh.length, veh.height);
+
+  // Draw the front and top.
+  for (let i = 0; i < veh.width; i++) {
+    ctx.fillStyle = '#CCCCCCFF';
+    ctx.fillRect(399 - Math.floor(veh.length / 2) - i, 300 - Math.floor(veh.height / 2) - Math.ceil(i / 2), 1, veh.height);
+    ctx.fillStyle = '#AAAAAAFF';
+    ctx.fillRect(399 - Math.floor(veh.length / 2) - i, 299 - Math.floor(veh.height / 2) - Math.ceil(i / 2), veh.length, 1);
+  }
+
 }
