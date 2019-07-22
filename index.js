@@ -42,6 +42,27 @@ const veh = {};
 { // Draw wheels.
   veh.wheels.forEach(wheel => {
     ctx.fillStyle = '#666666FF';
-    ctx.fillRect(wheel.position[0] - wheel.size + 400 - Math.floor(veh.length / 2), wheel.position[1] - wheel.size + 300 - Math.floor(veh.height / 2), wheel.size * 2, wheel.size * 2);
+    // ctx.fillRect(
+    //   wheel.position[0] - wheel.size + 400 - Math.floor(veh.length / 2),
+    //   wheel.position[1] + 10 - 2 * wheel.size + 300 - Math.floor(veh.height / 2),
+    //   wheel.size * 2,
+    //   wheel.size * 2
+    // );
+
+    // ctx.fillStyle = '#FF0000FF';
+    for (let y = 0; y < wheel.size * 2; y++) {
+      for (let x = 0; x < wheel.size * 2; x++) {
+        if ((y + 0.5 - wheel.size) ** 2 + (x + 0.5 - wheel.size) ** 2 < wheel.size ** 2) {
+          ctx.fillRect(
+            wheel.position[0] - wheel.size + 400 - Math.floor(veh.length / 2) + x,
+            wheel.position[1] + 15 - 2 * wheel.size + 300 - Math.floor(veh.height / 2) + y,
+            1,
+            1
+          );
+        }
+      };
+    };
+
+
   })
 }
